@@ -1,45 +1,31 @@
 #include <iostream>
-#include <string>
-#include "Student.h"
-
-using namespace std;
+#include "Manager.h"
 
 int main() {
-	//int n{10};
-	// int n = 10;
-	//int array[10]{}
-	// int array[10]{1, 2, 3, 4, 5}
-	// int array[4]{1, 2, 3, 4}
-	//for (int i = 0; i < 10; i++)
+	//const int size = 10;
+	//int vector[size]{};
+
+	//for (int i = 0; i < size; i++)
 	//{
-	//	cout << array[i];
+	//	cout << vector[i] << " ";
 	//}
 
-	//cout << endl;
+	/*Student st1 = Student("Alex");
+		Student st2 = Student("Potter", 14);
+	Student st3 = Student("Alice", 15, 10);
+	Student st4 = Student(); */
 
-	/*Student s1("Alex", 14, 9);
-	Student s2("Alice");
-	Student s3(10);
-	Student s4;
-	Student s5{};
-	Student s6{"Peter"};
-	Student s7{ "Anna", 13, 7 };*/
-	//Student s8{ "Anna", 13}; Error
-	//Student s9 = Student("Alice");
+	Student st1{};
+	Student st2{ "Alex" };
+	Student st3{ "Alex", 14 };
+	Student st4{ "Alex", 14, 10 };
 
-	const int size = 3;
-	Student students[size];
-	//Student students[size]{ {"Alice"}, {10}, {"Peter", 14, 9} };
+	cout << st1.convert() << endl;
+	cout << st2.convert() << endl;
+	cout << st3.convert() << endl;
+	cout << st4.convert() << endl;
 
-	/*cout << s1.convert() << endl;
-	cout << s2.convert() << endl;
-	cout << s3.convert() << endl;
-	cout << s4.convert() << endl;
-	cout << s5.convert() << endl;
-	cout << s6.convert() << endl;
-	cout << s7.convert() << endl;*/
-	//cout << s8.convert() << endl;
-	//cout << s9.convert() << endl;
+	Student students[]{ st1, st1,  st1,  st1,  st1, }
 
 	return 0;
 }

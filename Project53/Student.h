@@ -1,7 +1,5 @@
-﻿#pragma once
+﻿﻿#pragma once
 #include <string>
-#include <iostream>
-
 using namespace std;
 
 class Student {
@@ -10,46 +8,51 @@ public:
 	int age;
 	double mark;
 
-
-//default constructor (конструктор по умолчанию)
+	// default constructor (конструктор по умолчанию)
 	Student() {
-		cout << "default constructor" << endl;
+		cout << "default constructor was calling" << endl;
 		name = "no name";
-		age = 4;
-		mark = 5;
-}
-	//canonical constructor with parameters
-	Student(string nm, int a, double m) {
-		cout << "canonical constructor with parameters" << endl;
+		age = 6;
+		mark = 4;
+	}
+
+	//Student(string nm) {
+	//	//cout << "constructor with arguments was calling" << endl;
+	//	name = nm;
+	//}
+
+	//Student(string nm, int a) {
+	//	//cout << "constructor with arguments was calling" << endl;
+	//	name = nm;
+	//	age = a;
+	//}
+
+	// canonical constructor (канонический конструктор)
+	Student(string nm, int a = 14, double m = 4) {
+		cout << "canonical constructor with arguments was calling" << endl;
 		name = nm;
 		age = a;
 		mark = m;
 	}
-	//constructor with parameters
-	Student(string nm) {
-		cout << "constructor with parameters 1" << endl;
-		name = nm;
-		age = 0;
-		mark = 0;
+
+	//// copy-constructor (конструктор копирования)
+	//Student(const Student& student) {
+
+	//}
+
+	// destructor
+	~Student() {
+		cout << "destructor was calling" << endl;
+		// ...
 	}
 
-	Student(double m) {
-		cout << "constructor with parameters 2" << endl;
-		name = "no name";
-		age = 4;
-		mark = m;
-	}
-	// destructor ~
-	~Student() {
-		cout << "destructor" << endl;
-	}
 
 	string convert() {
 		string s = "";
 		s += name;
-		s += " age is " + to_string(age);
-		s += "and " + name + " mark is " + to_string(mark);
-		cout << s << endl;
-	}
+		s += ": age = " + to_string(age);
+		s += ", mark = " + to_string(mark);
 
+		return s;
+	}
 };
